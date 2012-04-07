@@ -14,7 +14,10 @@
 		66899CD61530F25A00F7F5CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CD51530F25A00F7F5CA /* main.m */; };
 		66899CDA1530F25A00F7F5CA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CD91530F25A00F7F5CA /* AppDelegate.m */; };
 		66899CDD1530F25A00F7F5CA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66899CDB1530F25A00F7F5CA /* MainStoryboard.storyboard */; };
-		66899CE01530F25A00F7F5CA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CDF1530F25A00F7F5CA /* ViewController.m */; };
+		66899CE81530F2B100F7F5CA /* CustomizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CE71530F2B100F7F5CA /* CustomizeViewController.m */; };
+		66899CEB1530F33700F7F5CA /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CEA1530F33700F7F5CA /* Inspection.m */; };
+		66899CEE1530F34300F7F5CA /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CED1530F34300F7F5CA /* Section.m */; };
+		66899CF21530F35D00F7F5CA /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CF11530F35D00F7F5CA /* Question.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +25,21 @@
 		66899CC91530F25A00F7F5CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		66899CCB1530F25A00F7F5CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66899CCD1530F25A00F7F5CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		66899CD11530F25A00F7F5CA /* EditTable-Info.plist */ = {isa = PBXFileReference; path = "EditTable-Info.plist"; sourceTree = "<group>"; };
+		66899CD11530F25A00F7F5CA /* EditTable-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EditTable-Info.plist"; sourceTree = "<group>"; };
 		66899CD31530F25A00F7F5CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		66899CD51530F25A00F7F5CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		66899CD71530F25A00F7F5CA /* EditTable-Prefix.pch */ = {isa = PBXFileReference; path = "EditTable-Prefix.pch"; sourceTree = "<group>"; };
-		66899CD81530F25A00F7F5CA /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		66899CD71530F25A00F7F5CA /* EditTable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditTable-Prefix.pch"; sourceTree = "<group>"; };
+		66899CD81530F25A00F7F5CA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66899CD91530F25A00F7F5CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		66899CDC1530F25A00F7F5CA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		66899CDE1530F25A00F7F5CA /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		66899CDF1530F25A00F7F5CA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		66899CE61530F2B100F7F5CA /* CustomizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeViewController.h; sourceTree = "<group>"; };
+		66899CE71530F2B100F7F5CA /* CustomizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeViewController.m; sourceTree = "<group>"; };
+		66899CE91530F33700F7F5CA /* Inspection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspection.h; sourceTree = "<group>"; };
+		66899CEA1530F33700F7F5CA /* Inspection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspection.m; sourceTree = "<group>"; };
+		66899CEC1530F34300F7F5CA /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Section.h; path = ../Section.h; sourceTree = "<group>"; };
+		66899CED1530F34300F7F5CA /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Section.m; path = ../Section.m; sourceTree = "<group>"; };
+		66899CF01530F35D00F7F5CA /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		66899CF11530F35D00F7F5CA /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +86,13 @@
 		66899CCF1530F25A00F7F5CA /* EditTable */ = {
 			isa = PBXGroup;
 			children = (
+				66899CEF1530F34900F7F5CA /* Domain */,
 				66899CD81530F25A00F7F5CA /* AppDelegate.h */,
 				66899CD91530F25A00F7F5CA /* AppDelegate.m */,
 				66899CDB1530F25A00F7F5CA /* MainStoryboard.storyboard */,
-				66899CDE1530F25A00F7F5CA /* ViewController.h */,
-				66899CDF1530F25A00F7F5CA /* ViewController.m */,
 				66899CD01530F25A00F7F5CA /* Supporting Files */,
+				66899CE61530F2B100F7F5CA /* CustomizeViewController.h */,
+				66899CE71530F2B100F7F5CA /* CustomizeViewController.m */,
 			);
 			path = EditTable;
 			sourceTree = "<group>";
@@ -96,6 +106,19 @@
 				66899CD71530F25A00F7F5CA /* EditTable-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66899CEF1530F34900F7F5CA /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				66899CEC1530F34300F7F5CA /* Section.h */,
+				66899CED1530F34300F7F5CA /* Section.m */,
+				66899CE91530F33700F7F5CA /* Inspection.h */,
+				66899CEA1530F33700F7F5CA /* Inspection.m */,
+				66899CF01530F35D00F7F5CA /* Question.h */,
+				66899CF11530F35D00F7F5CA /* Question.m */,
+			);
+			name = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +185,10 @@
 			files = (
 				66899CD61530F25A00F7F5CA /* main.m in Sources */,
 				66899CDA1530F25A00F7F5CA /* AppDelegate.m in Sources */,
-				66899CE01530F25A00F7F5CA /* ViewController.m in Sources */,
+				66899CE81530F2B100F7F5CA /* CustomizeViewController.m in Sources */,
+				66899CEB1530F33700F7F5CA /* Inspection.m in Sources */,
+				66899CEE1530F34300F7F5CA /* Section.m in Sources */,
+				66899CF21530F35D00F7F5CA /* Question.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
