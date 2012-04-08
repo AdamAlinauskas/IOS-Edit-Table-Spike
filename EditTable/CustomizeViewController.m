@@ -2,6 +2,7 @@
 #import "Inspection.h"
 #import "Section.h"
 #import "Question.h"
+#import "SectionButton.h"
 
 
 @interface CustomizeViewController ()
@@ -48,6 +49,7 @@
     inspection.title = @"Awesome inspection";
     inspection.sections = [[NSMutableArray alloc] initWithObjects:section1,section2, nil];
     
+    [self.tableView setEditing:true];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -103,7 +105,7 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -115,23 +117,29 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    Section* sectionFrom = [inspection.sections objectAtIndex:fromIndexPath.section];
+    Question* questionFrom = [sectionFrom.questions objectAtIndex:fromIndexPath.row];
+    [sectionFrom.questions removeObjectAtIndex:fromIndexPath.row];
+    
+    Section* sectionTo = [inspection.sections objectAtIndex:toIndexPath.section];
+    [sectionTo.questions insertObject:questionFrom atIndex:toIndexPath.row];
 }
-*/
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
 
 #pragma mark - Table view delegate
 
@@ -151,12 +159,95 @@
     return theSection.title;
 }
 
-- (IBAction)Move:(id)sender {
-    Section* section0 = [inspection.sections objectAtIndex:0];
-    [inspection.sections removeObject:section0];
-    [inspection.sections addObject:section0];
+-(void) moveUp:(SectionButton*)sender {
+    int sectionIndex = [inspection.sections indexOfObject:sender.section];
     
-    [self.tableView moveSection:0 toSection:1];
+    if(sectionIndex == 0)
+        return;
+    
+    [inspection.sections removeObjectAtIndex:sectionIndex];
+    
+    [inspection.sections insertObject:sender.section atIndex:sectionIndex-1];
+    
+    
+    [self.tableView moveSection:sectionIndex toSection:sectionIndex-1];
+}
+
+-(void) moveDown:(SectionButton*)sender {
+    int sectionIndex = [inspection.sections indexOfObject:sender.section];
+    
+    if(sectionIndex == inspection.sections.count-1)
+        return;
+    
+    [inspection.sections removeObjectAtIndex:sectionIndex];
+    [inspection.sections insertObject:sender.section atIndex:sectionIndex+1];
+    [self.tableView moveSection:sectionIndex toSection:sectionIndex+1];
+
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    Section* theSection = [inspection.sections objectAtIndex:section];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];              
+    view.backgroundColor = [UIColor grayColor];
+    
+    UILabel* title = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
+    title.text = theSection.title;
+    title.backgroundColor = [UIColor clearColor]; 
+    
+    SectionButton* up = [SectionButton buttonWithFrame:CGRectMake(100, 0, 75, 30) ];
+    [up setTitle:@"Up" forState:UIControlStateNormal];
+    [up addTarget:self action:@selector(moveUp:) forControlEvents:UIControlEventTouchUpInside];
+    up.section = theSection;
+    
+    SectionButton* down = [SectionButton buttonWithFrame:CGRectMake(175, 0, 75, 30)];
+    [down setTitle:@"down" forState:UIControlStateNormal];
+    [down addTarget:self action:@selector(moveDown:) forControlEvents:UIControlEventTouchUpInside];
+    down.section = theSection;
+    
+    SectionButton* addQuestion = [SectionButton buttonWithFrame: CGRectMake(250, 0, 75, 30)];
+    [addQuestion setTitle:@"Add question" forState:UIControlStateNormal];
+    [addQuestion addTarget:self action:@selector(addQuestion:) forControlEvents:UIControlEventTouchUpInside];
+    addQuestion.section = theSection;
+    
+    
+    [view addSubview:up];
+    [view addSubview:down];
+    [view addSubview:addQuestion];
+    [view addSubview:title];
+    
+    return view;
+}
+
+-(void) addQuestion:(SectionButton*) sender{
+    
+    int section = [inspection.sections indexOfObject:sender.section];
+    int row = sender.section.questions.count;
+    
+    Question* question1 = [Question alloc];
+    question1.text = @"I'm New!!!!!";
+    [sender.section.questions addObject:question1];
+    
+    NSIndexPath* path = [NSIndexPath indexPathForRow:row inSection:section];
+    
+    
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObjects:path, nil] withRowAnimation:UITableViewRowAnimationTop];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 35;
+}
+
+- (IBAction)AddSection:(id)sender {
+    
+    Section* section = [Section alloc];
+    section.title = @"New Section";
+    section.questions = [NSMutableArray arrayWithObjects:nil];
+    
+    [inspection.sections addObject:section];
+    
+    [self.tableView insertSections:[[NSIndexSet alloc] initWithIndex:inspection.sections.count-1] withRowAnimation:UITableViewRowAnimationLeft];
 }
 
 @end

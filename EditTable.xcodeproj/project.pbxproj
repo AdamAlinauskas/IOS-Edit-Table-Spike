@@ -18,6 +18,7 @@
 		66899CEB1530F33700F7F5CA /* Inspection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CEA1530F33700F7F5CA /* Inspection.m */; };
 		66899CEE1530F34300F7F5CA /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CED1530F34300F7F5CA /* Section.m */; };
 		66899CF21530F35D00F7F5CA /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 66899CF11530F35D00F7F5CA /* Question.m */; };
+		668B95FC1531D5BF00C3F507 /* SectionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 668B95FB1531D5BF00C3F507 /* SectionButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		66899CED1530F34300F7F5CA /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Section.m; path = ../Section.m; sourceTree = "<group>"; };
 		66899CF01530F35D00F7F5CA /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		66899CF11530F35D00F7F5CA /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		668B95FA1531D5BF00C3F507 /* SectionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionButton.h; sourceTree = "<group>"; };
+		668B95FB1531D5BF00C3F507 /* SectionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				66899CD01530F25A00F7F5CA /* Supporting Files */,
 				66899CE61530F2B100F7F5CA /* CustomizeViewController.h */,
 				66899CE71530F2B100F7F5CA /* CustomizeViewController.m */,
+				668B95FA1531D5BF00C3F507 /* SectionButton.h */,
+				668B95FB1531D5BF00C3F507 /* SectionButton.m */,
 			);
 			path = EditTable;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				66899CEB1530F33700F7F5CA /* Inspection.m in Sources */,
 				66899CEE1530F34300F7F5CA /* Section.m in Sources */,
 				66899CF21530F35D00F7F5CA /* Question.m in Sources */,
+				668B95FC1531D5BF00C3F507 /* SectionButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +308,7 @@
 				66899CE51530F25A00F7F5CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
